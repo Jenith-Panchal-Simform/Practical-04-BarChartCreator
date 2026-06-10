@@ -1,1 +1,1 @@
-## Bar chart creator using React 
+## Bar chart creator in React
