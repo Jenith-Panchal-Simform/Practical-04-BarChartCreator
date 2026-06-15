@@ -42,10 +42,11 @@ export const BarChart = () => {
         {data.map((item) => (
           <div key={item.title} className="flex h-[calc(100vh-100px)] flex-1 flex-col-reverse">
             <div
-              className="w-25 rounded-t bg-blue-500"
+              className="w-25 rounded-t bg-blue-500 transition-all duration-300 ease-out hover:bg-blue-600"
               style={{
                 height: `${(item.value / maxVal) * 100}%`,
               }}
+              title={`x:${item.title} y:${item.value}`}
             />
             <span className="absolute bottom-6 flex w-25 justify-center text-sm">
               {item.title.length > 5 ? item.title.slice(0, 3) : item.title}
