@@ -17,7 +17,7 @@ export const BarChart = () => {
   }
 
   return (
-    <main className="relative flex-9 pl-10">
+    <main className="relative flex-9 overflow-hidden pl-10">
       <h1 className="text-xl font-bold">Bar Chart</h1>
       <div
         className="absolute top-1/2 left-2 -translate-y-1/2 rotate-180 font-bold whitespace-nowrap"
@@ -33,14 +33,17 @@ export const BarChart = () => {
         {axis.xAxisLabel}
       </div>
 
-      <div className="realtive mx-5 my-2 flex h-[calc(100vh-80px)] items-end gap-2 border-b-2 border-l-2">
+      <div className="justify-betwen mx-5 my-2 flex h-[calc(100vh-80px)] items-end gap-2 overflow-x-auto border-b-2 border-l-2">
         <div className="item flex h-[calc(100vh-100px)] flex-col-reverse justify-between">
           {arr.map((item) => (
             <span>{item}</span>
           ))}
         </div>
         {data.map((item) => (
-          <div key={item.title} className="flex h-[calc(100vh-100px)] flex-1 flex-col-reverse">
+          <div
+            key={item.title}
+            className="flex h-[calc(100vh-100px)] flex-col-reverse items-center"
+          >
             <div
               className="w-25 rounded-t bg-blue-500 transition-all duration-300 ease-out hover:bg-blue-600"
               style={{
