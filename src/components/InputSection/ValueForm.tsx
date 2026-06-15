@@ -18,8 +18,8 @@ export const ValueForm = () => {
     dispatch({
       type: 'SET_AXIS',
       payload: {
-        xAxisLabel,
         yAxisLabel,
+        xAxisLabel,
       },
     });
   };

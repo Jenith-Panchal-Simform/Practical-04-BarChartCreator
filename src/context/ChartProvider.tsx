@@ -31,7 +31,7 @@ function reducer(state: ChartData, action: ChartAction): ChartData {
         ...state,
         axis: {
           xAxisLabel: action.payload.xAxisLabel,
-          yAxisLabel: action.payload.xAxisLabel,
+          yAxisLabel: action.payload.yAxisLabel,
         },
       };
 
