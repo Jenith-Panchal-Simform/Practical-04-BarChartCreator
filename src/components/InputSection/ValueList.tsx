@@ -1,17 +1,10 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { List, ListItem, ListItemText, Typography, Divider, Paper } from '@mui/material';
+import { useChartData } from '../../context/ChartContext';
 
 export function ValueList() {
-  const [items] = useState([
-    { title: 'Apples', value: 10 },
-    { title: 'Bananas', value: 5 },
-    { title: 'Cherries', value: 8 },
-    { title: 'Dates', value: 12 },
-    { title: 'Elderberries', value: 7 },
-    { title: 'Figs', value: 4 },
-    { title: 'Grapes', value: 15 },
-  ]);
-
+  const { chartData } = useChartData();
+  const items = chartData.data;
   return (
     <Paper
       sx={{ padding: 2, borderRadius: 2, border: '1px solid blue' }}
@@ -22,6 +15,11 @@ export function ValueList() {
       </Typography>
       <div className="flex-1 overflow-y-auto">
         <List>
+          {items.length == 0 && (
+            <ListItem>
+              <ListItemText>No Items To Show</ListItemText>
+            </ListItem>
+          )}
           {items.map((item, index) => (
             <Fragment key={index}>
               <ListItem>
