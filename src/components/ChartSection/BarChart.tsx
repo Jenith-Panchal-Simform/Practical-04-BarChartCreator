@@ -12,7 +12,9 @@ export const BarChart = () => {
   const arr = Array.from({ length: data.length }, (_, i) => {
     return i * step;
   });
-  arr.push(maxVal);
+  if (arr.length > 0) {
+    arr.push(maxVal);
+  }
 
   return (
     <main className="relative flex-9 pl-10">
