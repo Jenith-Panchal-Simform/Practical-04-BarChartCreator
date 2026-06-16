@@ -7,6 +7,7 @@ export const ValueInfo = () => {
       <div className="flex-6">
         <ValueForm />
       </div>
+
       <div className="min-h-0 flex-4">
         <ValueList />
       </div>

@@ -1,9 +1,11 @@
 import { useReducer, type ReactNode } from 'react';
+
 import { ChartContext, type BarChartData } from './ChartContext';
 
 type ChartProviderProps = {
   children: ReactNode;
 };
+
 export type ChartData = {
   axis: {
     xAxisLabel: string | null;
@@ -24,6 +26,7 @@ export type ChartAction =
       type: 'SET_DATA';
       payload: BarChartData;
     };
+
 function reducer(state: ChartData, action: ChartAction): ChartData {
   switch (action.type) {
     case 'SET_AXIS':
@@ -45,6 +48,7 @@ function reducer(state: ChartData, action: ChartAction): ChartData {
       return state;
   }
 }
+
 const initialState: ChartData = {
   axis: { xAxisLabel: null, yAxisLabel: null },
   data: [],

@@ -1,4 +1,5 @@
 import { createContext, useContext, type Dispatch } from 'react';
+
 import type { ChartAction, ChartData } from './ChartProvider';
 
 export type BarChartData = {
@@ -10,6 +11,7 @@ export type ChartContextType = {
   chartData: ChartData;
   dispatch: Dispatch<ChartAction>;
 };
+
 export const ChartContext = createContext<ChartContextType | undefined>(undefined);
 
 export const useChartData = () => {
