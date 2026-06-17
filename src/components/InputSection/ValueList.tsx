@@ -28,7 +28,14 @@ export function ValueList() {
           {items.map((item, index) => (
             <Fragment key={index}>
               <ListItem>
-                <ListItemText primary={item.title} secondary={`Value: ${item.value}`} />
+                <ListItemText
+                  primary={item.title}
+                  secondary={`Value: ${item.value}`}
+                  sx={{
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                  }}
+                />
               </ListItem>
 
               {index < items.length - 1 && <Divider />}
