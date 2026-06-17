@@ -41,10 +41,10 @@ export const BarChart = () => {
         </div>
 
         {/* Scrollable Chart Section */}
-        <div className="custom-scrollbar w-full overflow-x-auto">
+        <div className="custom-scrollbar w-full overflow-x-auto border-b-2 border-l-2 pl-2">
           <div className="min-w-max">
             {/* Chart Border Area */}
-            <div className="flex h-[calc(100vh-90px)] items-end gap-2 border-b-2 border-l-2">
+            <div className="flex h-[calc(100vh-90px)] items-end gap-2">
               {data.map((item, index) => (
                 <div
                   key={index}
